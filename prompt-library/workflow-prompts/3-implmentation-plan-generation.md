@@ -32,7 +32,10 @@ Instructions 0. Check MCP Access
    - Be specific about logic, components, files, or APIs involved
    - Ensure the prompt is self-contained and ready to use by an AI agent
    - Use @planning-guide.md
-4. Post the Prompt to the Ticket
+4. Save the Plan as a File
+   - Save the generated implementation prompt as a Markdown file in the repository: `implementation-plans/<JIRA_TICKET_KEY>-implementation-plan.md` (use kebab-case for the ticket title if included)
+   - Include the file's relative path in the comment in step 5
+5. Post the Prompt to the Ticket
    - Post the generated prompt as a comment on the related issue or ticket. Consider using MCP. It must be added to the ticket or issue
    - Prefix the comment with a line including: `**[AI generated] [Implementation prompt]**` to indicate the source.
 
