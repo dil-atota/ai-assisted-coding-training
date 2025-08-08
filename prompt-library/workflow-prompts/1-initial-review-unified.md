@@ -2,7 +2,7 @@ You are a professional fullstack engineer assigned to review and assess readines
 
 **Jira Ticket**: <JIRA_TICKET_KEY>
 
-**Additional COntextual information to review:**
+**Additional Context to review:**
 
 - <LINK_OR_PATH>
 - ...
@@ -10,8 +10,8 @@ You are a professional fullstack engineer assigned to review and assess readines
 ## Tasks:
 
 0. **Check MCP Access**
-      - Confirm whether an active Atlassian MCP connections is available.
-      - If no MCP connection is detected, terminate the task immediately and return: "No MCP connection. Execution stopped."
+   - Confirm whether an active Atlassian MCP connection is available.
+   - If no MCP connection is detected, terminate with: "No MCP connection. Execution stopped."
 1. **Retrieve and read content**:
    - For GitHub (if provided): Use MCP to retrieve and read the GitHub issue content
    - For Jira (if provided): Use Atlassian MCP to retrieve and read the Jira ticket content
@@ -28,6 +28,14 @@ You are a professional fullstack engineer assigned to review and assess readines
    - Embedded links to depth 2
    - Source code context (if provided)
 4. **Assess implementation readiness**: Check whether the issue/ticket contains all necessary information for a developer or agent to proceed without ambiguity
+   - Readiness checklist:
+     - Clear objective/outcome and non-goals
+     - Testable acceptance criteria
+     - Technical context: repository, environments, dependencies, API keys/config
+     - Data model/DB schema impacts and migration notes
+     - Rollout plan, telemetry/monitoring, and rollback strategy
+     - Negative paths, edge cases, and decision logic
+     - Security/privacy considerations (authn/authz, PII)
 
 Validation & Analysis:
 Review the ticket comprehensively and confirm it includes:
@@ -38,7 +46,7 @@ Review the ticket comprehensively and confirm it includes:
 • Edge cases or decision logic for non-trivial behavior
 • Approval or security processes, if applicable
 
-For any missing or unclear areas, generate a list of open questions that need clarification. Ask all the open questions qou have regardless the number of the questions. Focus on:
+For any missing or unclear areas, generate a list of open questions that need clarification. Ask all the open questions you have regardless of count. Focus on:
 • Ambiguities in the ticket description
 • Unclear requirements or edge cases
 • Missing technical details
@@ -49,25 +57,22 @@ Propose answers to the open questions and solutions for missing information base
 
 ```
 Summary of Task:
-[Write 2-3 sentence summary of what the ticket is about]
+[2-3 sentences]
 
 Context Sources:
-- [List ticket links, confluence page links, and all sources you reviewed]
+- [ticket links, confluence pages, repos, code paths]
 
-Open Questions or missing or unclear areas (if any):
-1. [Question 1]
-    **Proposal**: [Proposed answer 1]
-2. [Question 2]
-    **Proposal**: [Proposed answer 2]
-...
+Open Questions (if any):
+1. [Question]
+   Severity: [Blocker | Major | Minor]
+   Proposal: [Proposed answer]
+2. ...
 
-Ticket Readiness: [Yes / No]
+Ticket Readiness: [Yes - if no open questions | No - if open questions]
+Rationale: [brief reason]
 
 Recommendation:
 [What should be added or changed, or confirm readiness]
-
-Prompt for AI-assisted implementation [Add this only if the ticket is ready]:
-[Prompt I can use for implementation request]
 ```
 
 **Important**: If the ticket/issue is ready, explicitly state that no blockers remain.

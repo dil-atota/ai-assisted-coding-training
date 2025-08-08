@@ -1,10 +1,10 @@
 You are reviewing answers provided to a set of previously listed open questions related to a specific ticket or issue.
 
-## Answers:
+## Answers (tie each answer to its question ID):
 
-1.  <QUESTION_1>
-    Answer: <ANSWER_1>
-    2 ...
+1. Question: <QUESTION_1>
+   Answer: <ANSWER_1>
+2. ...
 
 ⸻
 
@@ -16,13 +16,14 @@ You are reviewing answers provided to a set of previously listed open questions 
    - Incomplete
    - Contradictory
 
-2. Ask Follow-Up Questions (if needed). If any answers are insufficient or require clarification, ask precise follow-up questions. If clarification is needed, STOP here and ignore the rest of the prompt.
+2. Ask Follow-Up Questions (if needed). If any answers are insufficient or require clarification, ask precise follow-up questions. If clarification is needed, STOP here and DO NOT post any ticket comment.
 
 3. Summarize and Post Update. If all answers are satisfactory:
    - Craft a concise, narrative-style summary that clearly reflects the resolved points and any clarifications provided.
 4. Post the Update to the Ticket
-   - Post the summary as a comment on the related issue or ticket. Consider using MCP. It must be added to the ticket or issue
+   - Post the summary as a comment on the related issue or ticket. Consider using MCP. It must be added to the ticket or issue.
    - Prefix the comment with a line including: `**[AI generated]**` to indicate the source.
+   - If a previous identical comment exists (same hash of content), skip posting to avoid duplicates.
 5. Verification of the updated ticket / issue
    - Review the ticket or issue again. Double check if the comment is added.
    - Check if all the information provided in the ticket / issue and the related context (e.g. comments) are suffucient for starting the implementation
@@ -35,8 +36,8 @@ You are reviewing answers provided to a set of previously listed open questions 
 
 ```
 Open Questions / Gaps Identified:
-1. [Restate unclear question or gap]
-   **Proposal**: [Your suggestion or specific follow-up question]
+1. Restatement: [unclear question or gap]
+   Proposal: [your suggested follow-up]
 2. ...
 ```
 

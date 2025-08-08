@@ -11,8 +11,8 @@
    - Include context on what was changed and how it was verified
 3. **Request Review**
    - Right after the PR is opened, request a code review from CoPilot (use MCP)
-   - Execute this cli command: `sleep 90` Wait for it to finish.
-   - Check if the pull request review finished. If you don't find a new completed code review, wait another 30 secs by running `sleep 30`
+   - Poll for review completion every 30 seconds up to 10 minutes (20 attempts). Stop early if a new completed review appears.
+   - If a review request already exists and is pending within the last 10 minutes, do not re-request.
 4. **Review and Address Pull request review comments**
    - Review the PR comments (if any), and address them
      - If the changes make sense to implement
@@ -21,7 +21,7 @@
        - Push the changes
      - If the changes doesn't make sense
        - Add a comment to them explaining why you think they should not be applied
-       - Use [AI comment] prefix in your comments
+       - Use [AI comment] prefix in your comments and reference relevant guidelines
 5. **Decide in next action**
    - If you implemented changes based on the received code review comments, go back to step 3, and request a new code review
    - If you did not implemented any changes based on the received code review comments, give this answer:

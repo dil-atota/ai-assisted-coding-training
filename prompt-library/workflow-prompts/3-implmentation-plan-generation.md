@@ -28,12 +28,21 @@ Instructions 0. Check MCP Access
    - If the ticket is complete, continue to generate a task-based implementation prompt
    - If the ticket is incomplete, STOP prompt execution
 3. Generate a Structured Implementation Plan
-   - Break down the implementation into sequential tasks
-   - Be specific about logic, components, files, or APIs involved
+   - Plan sections (required):
+     - Objective and Non-goals
+     - Architecture/Design overview
+     - Detailed steps (file-by-file edits, functions/classes to add/change)
+     - Data/Schema changes and migrations
+     - API contracts and external integrations
+     - Feature flags/config changes
+     - Tests (unit/integration/e2e) and test data
+     - Telemetry/monitoring
+     - Risks, edge cases, rollback
+     - Acceptance Criteria mapping to tasks
    - Ensure the prompt is self-contained and ready to use by an AI agent
    - Use @planning-guide.md
 4. Save the Plan as a File
-   - Save the generated implementation prompt as a Markdown file in the repository: `implementation-plans/<JIRA_TICKET_KEY>-implementation-plan.md` (use kebab-case for the ticket title if included)
+   - Save the generated implementation prompt as a Markdown file in the repository: `implementation-plans/<JIRA_TICKET_KEY>-<SLUGIFIED_TITLE>-implementation-plan.md`
    - Include the file's relative path in the comment in step 5
 5. Post the Prompt to the Ticket
    - Post the generated prompt as a comment on the related issue or ticket. Consider using MCP. It must be added to the ticket or issue
